@@ -206,6 +206,7 @@ defaultSettings = Settings
     , settingsAltSvc = Nothing
     , settingsMaxBuilderResponseBufferSize = 1049000000
     }
+{-# INLINE defaultSettings #-}
 
 -- | Apply the logic provided by 'defaultOnException' to determine if an
 -- exception should be shown or not. The goal is to hide exceptions which occur
@@ -287,6 +288,7 @@ defaultFork io =
       (# s1, _tid #) ->
         (# s1, () #)
 #endif
+{-# INLINE defaultFork #-}
 
 -- | Standard "accept" call for a listening socket.
 --
@@ -298,3 +300,4 @@ defaultAccept =
 #else
     accept
 #endif
+{-# INLINE defaultAccept #-}
